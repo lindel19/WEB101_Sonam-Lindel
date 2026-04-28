@@ -20,21 +20,30 @@ export default function MainLayout({ children }) {
         />
 
         <div>
-          {user ? (
-            <button
-              onClick={logout}
-              className="border px-4 py-2 rounded-md hover:bg-gray-100"
-            >
-              Logout
-            </button>
-          ) : (
-            <Link
-              href="/login"
-              className="bg-red-500 text-white px-5 py-2 rounded-md font-semibold"
-            >
-              Login
-            </Link>
-          )}
+         {user ? (
+  <button
+    onClick={logout}
+    className="border px-4 py-2 rounded-md hover:bg-gray-100"
+  >
+    Logout
+  </button>
+) : (
+  <div className="flex gap-3">
+    <Link
+      href="/login"
+      className="px-4 py-2 border rounded-md hover:bg-gray-100"
+    >
+      Login
+    </Link>
+
+    <Link
+      href="/signup"
+      className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold"
+    >
+      Signup
+    </Link>
+  </div>
+)}
         </div>
       </header>
 
